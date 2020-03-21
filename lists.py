@@ -1,40 +1,22 @@
 import  random
-maindeck = []
-for sets in range (12):  
-    for numb in range (12):
-        maindeck.append(numb + 1) 
-
-for numb in range (18):
-        maindeck.append("*") 
-             
+maindeck = list((1,2,3,4,5,6,7,8,9,10,11,12) *12)
+skipbo = [100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100]
+maindeck.extend(skipbo)
 random.shuffle(maindeck)      
 
-opendeck1 = []
-opendeck2 = []
-opendeck3 = []
-opendeck4 = []
-topopen = []
+opendeck1 = list
+opendeck2 = list
+opendeck3 = list
+opendeck4 = list
+topopen = list
 
-def topopen():
-    tmp=[]
-    if len(opendeck1)==0: 
-        tmp.append("X")
-    else:
-        tmp.append(len(opendeck1))
-
-    if len(opendeck2)==0: 
-        tmp.append("X")
-    else:
-        tmp.append(len(opendeck2))
-    if len(opendeck3)==0: 
-        tmp.append("X")
-    else:
-        tmp.append(len(opendeck3))
-
-    if len(opendeck4)==0: 
-        tmp.append("X")
-    else:
-        tmp.append(len(opendeck4))
-    
-    return tmp
+def Firstcards() :
+    tmp = opendeck1(0)
+    topopen.insert(tmp)
+    tmp = opendeck2(0)
+    topopen.insert(tmp)
+    tmp = opendeck3(0)
+    topopen.insert(tmp)
+    tmp = opendeck4(0)
+    topopen.insert(tmp)
 

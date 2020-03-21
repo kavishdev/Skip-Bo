@@ -1,6 +1,13 @@
 from lists import *
+from gamerules import clear
 class player ():
-
+    message = """
+    Options 0  : Pick card from maindeck
+    Options 1  : Own Top of main cards
+    Options 2  : card from hand,  ask index
+    Options 3  : from discard pile, ask index
+    Options 4  : pass, ask index from hand 
+    """
     lmain = []
     lhand = []
     ldiscard = []
@@ -26,28 +33,43 @@ class player ():
     def countofmaincard(self):
         return len(self.lmain)
         pass
-    def centerify(text, width=-1):
-        lines = text.split('\n')
-        width = max(map(len, lines)) if width == -1 else width
-        return '\n'.join(line.center(width) for line in lines)
 
     def Info(self,current=False):
-        print("===== ",self.name,"===== TopCard ",self.topmaincard())
+        print("===== ",self.name,"===== TopCard ",self.topmaincard(),"------Hand Cards-------",self.lhand)
         print("\tDiscardCards ",self.ldiscard)
-    def options(self):
-        ask =  input(" Option 0('0' without brackets), Option1('1' without brackets) , Option 2('2' without brackets), Option 3('3' without brackets), Option 4 ('4' without brackets) ")
-        return ask
-        pass
-    
-    def aske(self, parameter_list):
-        pass
 
-    message = """
-    Options 0  : Pick card from miandeck
-    Options 1  : Own Top of main cards
-    Options 2  : card from hand,  ask index
-    Options 3  : from discard pile, ask index
-    Options 4  : pass, ask index from hand 
-    """
+    def options(self):
+        print(self.message)
+        Option  = int(input(" Option 0('0' without brackets), Option1('1' without brackets) , Option 2('2' without brackets), Option 3('3' without brackets), Option 4 ('4' without brackets) ") )
+        return Option
+        
+    def optionswithout0(self):
+        print(self.message)
+        inputtakenafter0  = int(input("Option1('1' without brackets) , Option 2('2' without brackets), Option 3('3' without brackets), Option 4 ('4' without brackets) ") )
+ 
+        pass
+    def play(self):
+        Option = self.options()
+        if Option  == 0 :
+            tmp = maindeck.pop()
+            self.lhand.append(tmp)
+            from lists import *
+            self.Info()
+            self.optionswithout0()
+            pass
+
+        
+        if self.options == 1 :
+            tmp = list.remove(self.topmaincard())
+            list.insert(0,tmp)
+            self.topmaincard()
+            print(self.topmaincard())
+        
+        if self.options == 2 :
+            tmp = list.remove(self.topmaincard)
+            list.insert(0,tmp)
+        
+        
+    
 
 

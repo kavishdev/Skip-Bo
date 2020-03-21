@@ -24,6 +24,8 @@ for i in range (10):
 p1.setmaincard(tmp1)
 p2.setmaincard(tmp2)
 
+print (maindeck)
+
 # sleep(2)
 tmp1 = []
 tmp2 = []
@@ -56,6 +58,5 @@ print("\t \t Deck Stacks ",topopen())
 
 p1.Info()
 p2.Info()
-
-p1.play
-
+  
+p1.play()
